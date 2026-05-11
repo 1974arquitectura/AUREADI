@@ -26,7 +26,7 @@
             padding: 0 24px;
         }
 
-        /* Header con estilo Japandi */
+        /* Header */
         .main-header {
             background: rgba(250, 247, 240, 0.95);
             backdrop-filter: blur(10px);
@@ -306,7 +306,7 @@
             font-weight: 300;
         }
 
-        /* Tarjetas de estilos - Japandi */
+        /* Tarjetas de estilos */
         .style-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -410,7 +410,7 @@
             font-size: 12px;
         }
 
-        /* Técnica - Grid mejorado */
+        /* Técnica */
         .tecnica-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -739,7 +739,7 @@
         }
 
         .features-list li::before {
-            content: "✓";
+            content: "—";
             color: #c6a43f;
             font-weight: bold;
             font-size: 16px;
@@ -897,8 +897,8 @@
 
 <footer class="main-footer">
     <div class="container">
-        <p>© 2025 AUREA Desarrollos Inmobiliarios — Un proyecto, 4 estilos, 5 etapas</p>
-        <p style="margin-top: 8px; font-size: 11px; letter-spacing: 1px;">✦ Arquitectura consciente · Estilo Japandi ✦</p>
+        <p>2025 AUREA Desarrollos Inmobiliarios — Un proyecto, 4 estilos, 5 etapas</p>
+        <p style="margin-top: 8px; font-size: 11px; letter-spacing: 1px;">Arquitectura consciente · Estilo Japandi</p>
     </div>
 </footer>
 
@@ -906,7 +906,7 @@
 <div id="etapaModal" class="modal" onclick="closeModal()">
     <div class="modal-content" onclick="event.stopPropagation()">
         <div class="modal-header">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <span class="modal-close" onclick="closeModal()">×</span>
             <h2 id="modalTitle">Etapa</h2>
             <p id="modalSubtitle">Detalles del proceso constructivo</p>
         </div>
@@ -919,7 +919,7 @@
 <div id="tecnicaModal" class="tecnica-modal" onclick="closeTecnicaModal()">
     <div class="tecnica-modal-content" onclick="event.stopPropagation()">
         <div class="tecnica-modal-header">
-            <span class="tecnica-modal-close" onclick="closeTecnicaModal()">&times;</span>
+            <span class="tecnica-modal-close" onclick="closeTecnicaModal()">×</span>
             <h2 id="tecnicaModalTitle">Documentación Técnica</h2>
         </div>
         <div class="tecnica-modal-body" id="tecnicaModalBody">
@@ -929,7 +929,7 @@
 
 <!-- LIGHTBOX -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <span class="lightbox-close" onclick="closeLightbox()">×</span>
     <div id="lightboxContainer" class="lightbox-container horizontal">
         <div class="lightbox-image-wrapper">
             <img id="lightbox-img" src="" alt="">
@@ -1194,13 +1194,13 @@
             </div>
             <h3>${etapa.titulo}</h3>
             <p>${etapa.descripcionLarga}</p>
-            <h3 style="margin-top: 25px;">✓ Características incluidas</h3>
+            <h3 style="margin-top: 25px;">Características incluidas</h3>
             <ul class="features-list">
                 ${caracteristicasHtml}
             </ul>
             <div style="background: rgba(198, 164, 63, 0.08); padding: 20px; border-radius: 16px; margin-top: 25px;">
                 <p style="margin-bottom: 0; color: #8B7355; font-weight: 600; text-align: center;">
-                    🏗️ Esta etapa puede personalizarse según tus necesidades y el estilo arquitectónico seleccionado.
+                    Esta etapa puede personalizarse según tus necesidades y el estilo arquitectónico seleccionado.
                 </p>
             </div>
         `;
@@ -1227,11 +1227,11 @@
         
         modalBody.innerHTML = `
             <div class="tecnica-item">
-                <h3>📐 Planta Amueblada</h3>
+                <h3>Planta Amueblada</h3>
                 <img src="${tecnica.planta}" alt="Planta ${tecnica.nombre}" onclick="openLightbox('${tecnica.planta}', 'Planta Amueblada - ${tecnica.nombre}'); event.stopPropagation();" onerror="this.src='https://via.placeholder.com/500x400?text=Planta'">
             </div>
             <div class="tecnica-item">
-                <h3>🏗️ Isométrica</h3>
+                <h3>Isométrica</h3>
                 <img src="${tecnica.isometrico}" alt="Isométrica ${tecnica.nombre}" onclick="openLightbox('${tecnica.isometrico}', 'Isométrica - ${tecnica.nombre}'); event.stopPropagation();" onerror="this.src='https://via.placeholder.com/500x400?text=Isometrica'">
             </div>
         `;
@@ -1351,7 +1351,7 @@
             <section id="tecnica" class="section-padding">
                 <div class="container">
                     <h2 class="section-title">Documentación Técnica</h2>
-                    <p class="section-subtitle">Planos e isométricos de cada estilo arquitectónico. Haz clic para ver Planta + Isométrica.</p>
+                    <p class="section-subtitle">Planos e isométricos de cada estilo arquitectónico. Haz clic para ver Planta e Isométrica.</p>
                     <div class="tecnica-grid">
                         ${renderTecnicaCards()}
                     </div>
@@ -1364,11 +1364,11 @@
                     <div class="contacto-equipo">
                         <div class="contacto-card">
                             <img src="assets/images/contacto/oficina.jpg" alt="Oficina" onerror="this.src='https://via.placeholder.com/280x200?text=Oficina'">
-                            <p>📍 Nuestras Oficinas</p>
+                            <p>Nuestras Oficinas</p>
                         </div>
                         <div class="contacto-card">
                             <img src="assets/images/contacto/equipo.jpg" alt="Equipo" onerror="this.src='https://via.placeholder.com/280x200?text=Equipo'">
-                            <p>👥 El Equipo AUREA</p>
+                            <p>El Equipo AUREA</p>
                         </div>
                     </div>
                     <form class="contact-form" id="contactForm">
@@ -1393,7 +1393,7 @@
                         <button type="submit" class="btn" style="width:100%;">Enviar mensaje</button>
                     </form>
                     <div style="text-align: center; color: #b8aa98;">
-                        <p>📞 +52 55 1234 5678 | ✉️ hola@aureadesarrollos.com</p>
+                        <p>+52 55 1234 5678 | hola@aureadesarrollos.com</p>
                     </div>
                 </div>
             </section>
@@ -1447,7 +1447,7 @@
                         ${renderStyleCards()}
                     </div>
                     <div class="back-link">
-                        <button class="btn-volver" onclick="navigateTo('home')">← Volver al Inicio</button>
+                        <button class="btn-volver" onclick="navigateTo('home')">Volver al Inicio</button>
                     </div>
                 </div>
             </section>
@@ -1464,7 +1464,7 @@
                         ${renderStagesGrid()}
                     </div>
                     <div class="back-link">
-                        <button class="btn-volver" onclick="navigateTo('home')">← Volver al Inicio</button>
+                        <button class="btn-volver" onclick="navigateTo('home')">Volver al Inicio</button>
                     </div>
                 </div>
             </section>
@@ -1476,12 +1476,12 @@
             <section class="section-padding">
                 <div class="container">
                     <h2 class="section-title">Documentación Técnica</h2>
-                    <p class="section-subtitle">Planos e isométricos de cada estilo arquitectónico. Haz clic en cada tarjeta para ver Planta + Isométrica.</p>
+                    <p class="section-subtitle">Planos e isométricos de cada estilo arquitectónico. Haz clic en cada tarjeta para ver Planta e Isométrica.</p>
                     <div class="tecnica-grid">
                         ${renderTecnicaCards()}
                     </div>
                     <div class="back-link">
-                        <button class="btn-volver" onclick="navigateTo('home')">← Volver al Inicio</button>
+                        <button class="btn-volver" onclick="navigateTo('home')">Volver al Inicio</button>
                     </div>
                 </div>
             </section>
@@ -1497,11 +1497,11 @@
                     <div class="contacto-equipo">
                         <div class="contacto-card">
                             <img src="assets/images/contacto/oficina.jpg" alt="Oficina" onerror="this.src='https://via.placeholder.com/280x200?text=Oficina'">
-                            <p>📍 Nuestras Oficinas</p>
+                            <p>Nuestras Oficinas</p>
                         </div>
                         <div class="contacto-card">
                             <img src="assets/images/contacto/equipo.jpg" alt="Equipo" onerror="this.src='https://via.placeholder.com/280x200?text=Equipo'">
-                            <p>👥 El Equipo AUREA</p>
+                            <p>El Equipo AUREA</p>
                         </div>
                     </div>
                     <form class="contact-form" id="contactForm2">
@@ -1526,10 +1526,10 @@
                         <button type="submit" class="btn" style="width:100%;">Enviar mensaje</button>
                     </form>
                     <div style="text-align: center; color: #b8aa98;">
-                        <p>📞 +52 55 1234 5678 | ✉️ hola@aureadesarrollos.com</p>
+                        <p>+52 55 1234 5678 | hola@aureadesarrollos.com</p>
                     </div>
                     <div class="back-link">
-                        <button class="btn-volver" onclick="navigateTo('home')">← Volver al Inicio</button>
+                        <button class="btn-volver" onclick="navigateTo('home')">Volver al Inicio</button>
                     </div>
                 </div>
             </section>
@@ -1560,11 +1560,11 @@
                         `).join('')}
                     </div>
                     <div class="botones-container">
-                        <button class="btn-grande" onclick="navigateTo('gallery', '${estiloId}', 'exteriores')">🏛️ Espacios Exteriores</button>
-                        <button class="btn-grande btn-outline" onclick="navigateTo('gallery', '${estiloId}', 'interiores')">🛋️ Espacios Interiores</button>
+                        <button class="btn-grande" onclick="navigateTo('gallery', '${estiloId}', 'exteriores')">Espacios Exteriores</button>
+                        <button class="btn-grande btn-outline" onclick="navigateTo('gallery', '${estiloId}', 'interiores')">Espacios Interiores</button>
                     </div>
                     <div class="back-link">
-                        <button class="btn-volver" onclick="navigateTo('estilos')">← Volver a los Estilos</button>
+                        <button class="btn-volver" onclick="navigateTo('estilos')">Volver a los Estilos</button>
                     </div>
                 </div>
             </section>
@@ -1577,13 +1577,12 @@
         
         const images = type === 'exteriores' ? estilo.exteriores : estilo.interiores;
         const title = type === 'exteriores' ? 'Espacios Exteriores' : 'Espacios Interiores';
-        const icon = type === 'exteriores' ? '🏛️' : '🛋️';
         
         return `
             <section class="page-header">
                 <div class="container">
                     <h1>${estilo.nombre}</h1>
-                    <p>${icon} ${title} · Haz clic en cualquier imagen para verla en tamaño real</p>
+                    <p>${title} · Haz clic en cualquier imagen para verla en tamaño real</p>
                 </div>
             </section>
             <section class="section-padding">
@@ -1597,7 +1596,7 @@
                         `).join('')}
                     </div>
                     <div class="back-link">
-                        <button class="btn-volver" onclick="navigateTo('estiloDetail', '${estiloId}')">← Volver a ${estilo.nombre}</button>
+                        <button class="btn-volver" onclick="navigateTo('estiloDetail', '${estiloId}')">Volver a ${estilo.nombre}</button>
                     </div>
                 </div>
             </section>
