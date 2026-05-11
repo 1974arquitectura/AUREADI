@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUREA Desarrollos Inmobiliarios - Estilo Japandi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #4a4a4a;
+            background: linear-gradient(135deg, #faf7f0 0%, #f5f0e6 100%);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header con estilo Japandi */
+        .main-header {
+            background: rgba(250, 247, 240, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 16px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03), 0 1px 0 rgba(198, 164, 63, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+            cursor: pointer;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #8B7355;
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            color: #c6a43f;
+            font-weight: 700;
+        }
+
+        .logo-sub {
+            font-size: 11px;
+            font-weight: 400;
+            color: #a89880;
+            letter-spacing: 2px;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+        }
+
+        .main-nav ul li a {
+            color: #5a5a5a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .main-nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #c6a43f;
+            transition: width 0.3s ease;
+        }
+
+        .main-nav ul li a:hover {
+            color: #c6a43f;
+        }
+
+        .main-nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            background-image: url('assets/images/hero/hero-bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 620px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(139, 115, 85, 0.25);
+            backdrop-filter: blur(2px);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            color: white;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #fff 0%, #e8dcc8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 35px;
+            font-weight: 400;
+            color: #f5f0e6;
+            letter-spacing: 0.5px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #c6a43f 0%, #b8922e 100%);
+            color: #fff;
+            padding: 14px 36px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(198, 164, 63, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #b8922e 0%, #a07d25 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(198, 164, 63, 0.4);
+        }
+
+        .btn-grande {
+            display: inline-block;
+            background: linear-gradient(135deg, #c6a43f 0%, #b8922e 100%);
+            color: #fff;
+            padding: 16px 48px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(198, 164, 63, 0.3);
+        }
+
+        .btn-grande:hover {
+            background: linear-gradient(135deg, #b8922e 0%, #a07d25 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(198, 164, 63, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #c6a43f;
+            color: #c6a43f;
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: #c6a43f;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(198, 164, 63, 0.3);
+        }
+
+        .btn-volver {
+            display: inline-block;
+            background: transparent;
+            border: 1px solid #c6a43f;
+            color: #c6a43f;
+            padding: 12px 30px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 40px 0;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            background: rgba(198, 164, 63, 0.1);
+        }
+
+        .btn-volver:hover {
+            background: rgba(198, 164, 63, 0.2);
+            color: #8B7355;
+        }
+
+        .section-padding {
+            padding: 90px 0;
+        }
+
+        .bg-light {
+            background: linear-gradient(135deg, #f5f0e6 0%, #ede6d8 100%);
+        }
+
+        .bg-dark {
+            background: linear-gradient(135deg, #2c2820 0%, #1f1c16 100%);
+            color: #e8dcc8;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 16px;
+            font-weight: 600;
+            color: #8B7355;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            font-size: 17px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #a89880;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .bg-dark .section-title {
+            color: #e8dcc8;
+        }
+
+        .bg-dark .section-subtitle {
+            color: #b8aa98;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #2c2820 0%, #1f1c16 100%);
+            color: #e8dcc8;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .page-header p {
+            font-size: 17px;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        /* Tarjetas de estilos - Japandi */
+        .style-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .style-card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px -12px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .style-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 45px -15px rgba(198, 164, 63, 0.15);
+        }
+
+        .style-card .card-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .style-card:hover .card-image {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 24px 20px 28px;
+        }
+
+        .style-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #8B7355;
+        }
+
+        .style-card p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #9a8a72;
+        }
+
+        /* Etapas */
+        .stages-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 25px;
+        }
+
+        .stage-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 28px 16px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(198, 164, 63, 0.1);
+        }
+
+        .stage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -12px rgba(198, 164, 63, 0.15);
+            border-color: rgba(198, 164, 63, 0.3);
+        }
+
+        .stage-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 15px;
+        }
+
+        .stage-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #c6a43f;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .stage-card h4 {
+            font-size: 16px;
+            margin: 15px 0 8px;
+            color: #8B7355;
+            font-weight: 600;
+        }
+
+        .stage-card p {
+            color: #a89880;
+            font-size: 12px;
+        }
+
+        /* Técnica - Grid mejorado */
+        .tecnica-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tecnica-card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(198, 164, 63, 0.1);
+        }
+
+        .tecnica-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px -12px rgba(198, 164, 63, 0.12);
+            border-color: rgba(198, 164, 63, 0.3);
+        }
+
+        .tecnica-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .tecnica-card p {
+            padding: 18px;
+            font-weight: 600;
+            color: #8B7355;
+            font-size: 15px;
+        }
+
+        .materiales-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .material-card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(198, 164, 63, 0.1);
+        }
+
+        .material-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -12px rgba(198, 164, 63, 0.12);
+        }
+
+        .material-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .material-card h4 {
+            font-size: 18px;
+            margin: 20px 0 10px;
+            color: #8B7355;
+            font-weight: 600;
+        }
+
+        .material-card p {
+            padding: 0 20px 20px;
+            color: #a89880;
+            font-size: 13px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(198, 164, 63, 0.1);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -12px rgba(198, 164, 63, 0.12);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .gallery-item p {
+            padding: 18px;
+            text-align: center;
+            font-weight: 500;
+            color: #8B7355;
+        }
+
+        .botones-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contacto-equipo {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contacto-card {
+            text-align: center;
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            width: 280px;
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.06);
+            border: 1px solid rgba(198, 164, 63, 0.1);
+        }
+
+        .contacto-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .contacto-card p {
+            padding: 15px;
+            font-weight: 500;
+            color: #8B7355;
+        }
+
+        .contact-form {
+            max-width: 680px;
+            margin: 0 auto 40px;
+            background: #ffffff;
+            padding: 44px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px -12px rgba(0,0,0,0.08);
+            border: 1px solid rgba(198, 164, 63, 0.15);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #e0d8cc;
+            border-radius: 60px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            background: #fefcf8;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: #c6a43f;
+            box-shadow: 0 0 0 3px rgba(198, 164, 63, 0.1);
+        }
+
+        .contact-form textarea {
+            border-radius: 24px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            width: 100%;
+        }
+
+        .main-footer {
+            background: linear-gradient(135deg, #1f1c16 0%, #15130f 100%);
+            text-align: center;
+            padding: 32px 0;
+            font-size: 13px;
+            color: #b8aa98;
+            letter-spacing: 0.5px;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* MODALES */
+        .modal, .tecnica-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.92);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+        }
+
+        .modal.active, .tecnica-modal.active {
+            display: flex;
+        }
+
+        .modal-content, .tecnica-modal-content {
+            background: linear-gradient(135deg, #fefcf8 0%, #faf7f0 100%);
+            max-width: 900px;
+            width: 90%;
+            border-radius: 24px;
+            overflow: hidden;
+            animation: modalFadeIn 0.3s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 1px solid rgba(198, 164, 63, 0.2);
+        }
+
+        .tecnica-modal-content {
+            max-width: 1200px;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .modal-header, .tecnica-modal-header {
+            background: linear-gradient(135deg, #2c2820 0%, #1f1c16 100%);
+            color: #e8dcc8;
+            padding: 25px 30px;
+            position: relative;
+        }
+
+        .modal-header h2, .tecnica-modal-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            margin-bottom: 6px;
+        }
+
+        .modal-header p {
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        .modal-close, .tecnica-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+            color: #e8dcc8;
+        }
+
+        .modal-close:hover, .tecnica-modal-close:hover {
+            color: #c6a43f;
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .modal-body img {
+            width: 100%;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .modal-body h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: #8B7355;
+            margin-bottom: 12px;
+        }
+
+        .modal-body p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #6a5a4a;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .features-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(198, 164, 63, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #6a5a4a;
+            font-size: 14px;
+        }
+
+        .features-list li::before {
+            content: "✓";
+            color: #c6a43f;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .tecnica-modal-body {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .tecnica-item {
+            text-align: center;
+        }
+
+        .tecnica-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: #8B7355;
+            margin-bottom: 15px;
+        }
+
+        .tecnica-item img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .tecnica-item img:hover {
+            transform: scale(1.02);
+        }
+
+        /* LIGHTBOX */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.96);
+            z-index: 4000;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 90%;
+            max-height: 85%;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .lightbox-container.horizontal {
+            flex-direction: column;
+        }
+
+        .lightbox-container.vertical {
+            flex-direction: row;
+        }
+
+        .lightbox-container img {
+            max-width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        .lightbox-caption {
+            color: #e8dcc8;
+            font-size: 16px;
+            font-weight: 500;
+            background: rgba(44, 40, 32, 0.85);
+            backdrop-filter: blur(8px);
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            max-width: 400px;
+            line-height: 1.5;
+            border: 1px solid rgba(198, 164, 63, 0.3);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: #e8dcc8;
+            font-size: 45px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+            z-index: 4001;
+        }
+
+        .lightbox-close:hover {
+            color: #c6a43f;
+        }
+
+        @media (max-width: 1024px) {
+            .style-grid, .stages-grid, .tecnica-grid, .materiales-grid { grid-template-columns: repeat(2,1fr); }
+            .tecnica-modal-body { grid-template-columns: 1fr; gap: 40px; }
+            .hero-content h2 { font-size: 44px; }
+        }
+
+        @media (max-width: 768px) {
+            .main-header .container { flex-direction: column; gap: 16px; }
+            .main-nav ul { gap: 20px; flex-wrap: wrap; justify-content: center; }
+            .hero-content h2 { font-size: 36px; }
+            .section-title { font-size: 32px; }
+            .style-grid, .stages-grid, .tecnica-grid, .materiales-grid, .gallery-grid { grid-template-columns: 1fr; }
+            .contact-form { padding: 28px; }
+            .page-header h1 { font-size: 28px; }
+            .logo-text { font-size: 16px; }
+            .logo img { height: 35px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="container">
+        <div class="logo">
+            <img src="assets/logo-aurea.png" alt="AUREA Desarrollos" onclick="navigateTo('home')">
+            <div>
+                <div class="logo-text">AUREA <span>-</span> Desarrollos Inmobiliarios</div>
+                <div class="logo-sub">arquitectura consciente</div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a onclick="navigateTo('home')">Inicio</a></li>
+                <li><a onclick="navigateTo('estilos')">Estilos</a></li>
+                <li><a onclick="navigateTo('etapas')">Etapas</a></li>
+                <li><a onclick="navigateTo('tecnica')">Técnica</a></li>
+                <li><a onclick="navigateTo('contacto')">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main id="app"></main>
+
+<footer class="main-footer">
+    <div class="container">
+        <p>© 2025 AUREA Desarrollos Inmobiliarios — Un proyecto, 4 estilos, 5 etapas</p>
+        <p style="margin-top: 8px; font-size: 11px; letter-spacing: 1px;">✦ Arquitectura consciente · Estilo Japandi ✦</p>
+    </div>
+</footer>
+
+<!-- MODAL PARA ETAPAS -->
+<div id="etapaModal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <div class="modal-header">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">Etapa</h2>
+            <p id="modalSubtitle">Detalles del proceso constructivo</p>
+        </div>
+        <div class="modal-body" id="modalBody">
+        </div>
+    </div>
+</div>
+
+<!-- MODAL PARA TÉCNICA -->
+<div id="tecnicaModal" class="tecnica-modal" onclick="closeTecnicaModal()">
+    <div class="tecnica-modal-content" onclick="event.stopPropagation()">
+        <div class="tecnica-modal-header">
+            <span class="tecnica-modal-close" onclick="closeTecnicaModal()">&times;</span>
+            <h2 id="tecnicaModalTitle">Documentación Técnica</h2>
+        </div>
+        <div class="tecnica-modal-body" id="tecnicaModalBody">
+        </div>
+    </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <div id="lightboxContainer" class="lightbox-container horizontal">
+        <div class="lightbox-image-wrapper">
+            <img id="lightbox-img" src="" alt="">
+        </div>
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+</div>
+
+<script>
+    // ============================================
+    // CONFIGURACIÓN DE ETAPAS
+    // ============================================
+    const etapasConfig = {
+        1: {
+            numero: 1,
+            nombre: "Etapa 1",
+            titulo: "Espacios Sociales y Relax",
+            subtitulo: "El corazón del hogar",
+            imagen: "assets/images/programa/etapa-1-cocina-comedor-piscina.png",
+            imagenModal: "assets/images/programa/etapas/Etapa 1.png",
+            descripcionLarga: "Esta primera etapa es fundamental porque define los espacios de convivencia y entretenimiento. Diseñamos cada detalle para que disfrutes de momentos inolvidables con familia y amigos.",
+            caracteristicas: [
+                "Cocina integral con isla central y acabados de lujo",
+                "Comedor con capacidad para 10-12 comensales",
+                "Lavadero con área de lavado y secado eficiente",
+                "Sanitario social con diseño contemporáneo",
+                "Piscina con galería cubierta y sistema de climatización",
+                "Pérgola en jardín privado con área de asador"
+            ]
+        },
+        2: {
+            numero: 2,
+            nombre: "Etapa 2",
+            titulo: "Dormitorios Secundarios",
+            subtitulo: "Privacidad y confort para toda la familia",
+            imagen: "assets/images/programa/etapa-2-dormitorios-suite.png",
+            imagenModal: "assets/images/programa/etapas/Etapa 2.png",
+            descripcionLarga: "Los dormitorios secundarios están diseñados para ofrecer privacidad y autonomía a cada miembro de la familia. Cada habitación cuenta con baño en suite para mayor comodidad.",
+            caracteristicas: [
+                "Dos dormitorios con baño privado cada uno",
+                "Closets empotrados con organización interior",
+                "Ventanas de doble acristalamiento para aislamiento acústico",
+                "Iluminación LED regulable en cada habitación",
+                "Salida a balcón o terraza privada",
+                "Preinstalación para aire acondicionado"
+            ]
+        },
+        3: {
+            numero: 3,
+            nombre: "Etapa 3",
+            titulo: "Área de Recibo y Convivencia",
+            subtitulo: "La primera impresión de tu hogar",
+            imagen: "assets/images/programa/etapa-3-sala-estar-ingreso.png",
+            imagenModal: "assets/images/programa/etapas/Etapa 3.png",
+            descripcionLarga: "El área de recibo es la carta de presentación de tu hogar. Diseñamos un espacio que combina elegancia y funcionalidad para recibir a tus invitados con estilo.",
+            caracteristicas: [
+                "Sala de estar con doble altura y chimenea",
+                "Recibidor con piso de mármol o porcelanato",
+                "Toilette para invitados con acabados de lujo",
+                "Iluminación cenital y lámparas decorativas",
+                "Espacio para obra de arte o espejo de gran formato",
+                "Conexión fluida con áreas sociales"
+            ]
+        },
+        4: {
+            numero: 4,
+            nombre: "Etapa 4",
+            titulo: "Master Suite",
+            subtitulo: "Tu santuario personal",
+            imagen: "assets/images/programa/etapa-4-principal-vestidor.png",
+            imagenModal: "assets/images/programa/etapas/Etapa 4.png",
+            descripcionLarga: "La Master Suite es el espacio más íntimo y personal de la vivienda. Diseñada para tu máximo confort, incluye un amplio vestidor y un baño tipo spa.",
+            caracteristicas: [
+                "Dormitorio principal de gran dimensión",
+                "Vestidor con isla central y sistema de iluminación LED",
+                "Baño principal con hidromasaje y regadera tipo lluvia",
+                "Terraza privada con vista al jardín",
+                "Closet inteligente con organización por temporadas",
+                "Sistema de domótica para controlar luces y cortinas"
+            ]
+        },
+        5: {
+            numero: 5,
+            nombre: "Etapa 5",
+            titulo: "Flexibilidad y Comodidad",
+            subtitulo: "Cochera convertible en quincho",
+            imagen: "assets/images/programa/etapa-5-cochera-doble.png",
+            imagenModal: "assets/images/programa/etapas/Etapa 5.png",
+            descripcionLarga: "La última etapa ofrece la máxima flexibilidad. La cochera para dos autos puede transformarse fácilmente en un quincho para reuniones al aire libre, adaptándose a tus necesidades.",
+            caracteristicas: [
+                "Cochera cubierta para dos vehículos",
+                "Sistema de puertas plegables para apertura total",
+                "Piso continuo que conecta con el jardín",
+                "Preinstalación para asador y cocina exterior",
+                "Iluminación escénica para eventos nocturnos",
+                "Espacio convertible en área de entretenimiento en minutos"
+            ]
+        }
+    };
+
+    // ============================================
+    // CONFIGURACIÓN DE TÉCNICA
+    // ============================================
+    const tecnicaConfig = {
+        neoclasico: {
+            nombre: "Neoclásico Contemporáneo",
+            planta: "assets/images/tecnica/planta-neoclasico.png",
+            isometrico: "assets/images/tecnica/isometrico-neoclasico.png"
+        },
+        mediterraneo: {
+            nombre: "Mediterráneo Contemporáneo",
+            planta: "assets/images/tecnica/planta-mediterraneo.png",
+            isometrico: "assets/images/tecnica/isometrico-mediterraneo.png"
+        },
+        minimalista: {
+            nombre: "Minimalista Cálido",
+            planta: "assets/images/tecnica/planta-minimalista.png",
+            isometrico: "assets/images/tecnica/isometrico-minimalista.png"
+        },
+        internacional: {
+            nombre: "Internacional",
+            planta: "assets/images/tecnica/planta-internacional.png",
+            isometrico: "assets/images/tecnica/isometrico-internacional.png"
+        }
+    };
+
+    // ============================================
+    // CONFIGURACIÓN DE ESTILOS
+    // ============================================
+    const estilosConfig = {
+        neoclasico: {
+            nombre: 'Neoclásico Contemporáneo',
+            descripcion: 'Elegancia atemporal que combina la tradición clásica con el confort moderno',
+            imagenPrincipal: 'assets/images/proyecto/4-estilos/neoclasico.jpg',
+            materiales: [
+                { nombre: 'Granito', img: 'assets/images/estilos/neoclasico/intro/granito.png', desc: 'Sólido y elegante, perfecto para pisos y encimeras.' },
+                { nombre: 'Bronce', img: 'assets/images/estilos/neoclasico/intro/bronce.png', desc: 'Detalles que aportan calidez y sofisticación.' },
+                { nombre: 'Caliza', img: 'assets/images/estilos/neoclasico/intro/caliza.png', desc: 'Piedra natural que conecta con la tradición clásica.' },
+                { nombre: 'Estuco', img: 'assets/images/estilos/neoclasico/intro/estuco.png', desc: 'Acabados murales que evocan la arquitectura europea.' }
+            ],
+            exteriores: [
+                { img: 'assets/images/estilos/neoclasico/exteriores/01-vista-panoramica.png', titulo: 'Vista panorámica', desc: 'Impresionante vista de la fachada principal que muestra la simetría y elegancia del estilo neoclásico.' },
+                { img: 'assets/images/estilos/neoclasico/exteriores/02-fachada-principal.png', titulo: 'Fachada principal', desc: 'Columnas estilizadas y molduras que definen el carácter monumental de la residencia.' },
+                { img: 'assets/images/estilos/neoclasico/exteriores/03-acceso-principal.png', titulo: 'Acceso principal', desc: 'Puerta de madera noble con herrajes en bronce que reciben a los visitantes.' },
+                { img: 'assets/images/estilos/neoclasico/exteriores/04-jardin-privado.png', titulo: 'Jardín privado', desc: 'Espacios verdes cuidadosamente diseñados con fuentes y estatuas clásicas.' },
+                { img: 'assets/images/estilos/neoclasico/exteriores/05-contrafachada.png', titulo: 'Contrafachada', desc: 'Vista posterior que integra terrazas y áreas de descanso con el jardín.' }
+            ],
+            interiores: [
+                { img: 'assets/images/estilos/neoclasico/interiores/01-recibidor.png', titulo: 'Recibidor principal', desc: 'Amplio recibidor con piso de mármol y araña de cristal que da la bienvenida.' },
+                { img: 'assets/images/estilos/neoclasico/interiores/02-sala-estar.png', titulo: 'Sala de estar', desc: 'Espacio elegante con chimenea de mármol y molduras en paredes y techos.' },
+                { img: 'assets/images/estilos/neoclasico/interiores/03-comedor.png', titulo: 'Comedor formal', desc: 'Comedor con capacidad para 12 comensales, ideal para cenas de gala.' },
+                { img: 'assets/images/estilos/neoclasico/interiores/04-dormitorio-principal.png', titulo: 'Dormitorio principal', desc: 'Suite principal con acabados en tonos neutros y detalles en dorado.' },
+                { img: 'assets/images/estilos/neoclasico/interiores/05-sanitario.png', titulo: 'Sanitario', desc: 'Baño completo con mármol Carrara y grifería en bronce.' },
+                { img: 'assets/images/estilos/neoclasico/interiores/06-vestidor.png', titulo: 'Vestidor', desc: 'Amplio vestidor con iluminación LED y acabados en madera.' },
+                { img: 'assets/images/estilos/neoclasico/interiores/07-dormitorio.png', titulo: 'Dormitorio secundario', desc: 'Habitación con baño privado y vista al jardín interior.' }
+            ]
+        },
+        mediterraneo: {
+            nombre: 'Mediterráneo Contemporáneo',
+            descripcion: 'Frescura costera, texturas naturales y patios interiores llenos de luz',
+            imagenPrincipal: 'assets/images/proyecto/4-estilos/mediterraneo.jpg',
+            materiales: [
+                { nombre: 'Cerámica', img: 'assets/images/estilos/mediterraneo/intro/ceramica.png', desc: 'Azulejos decorativos que evocan el Mediterráneo.' },
+                { nombre: 'Madera', img: 'assets/images/estilos/mediterraneo/intro/madera.png', desc: 'Vigas y detalles que aportan calidez natural.' },
+                { nombre: 'Piedra', img: 'assets/images/estilos/mediterraneo/intro/piedra.png', desc: 'Muros de carga con textura y carácter.' },
+                { nombre: 'Terracota', img: 'assets/images/estilos/mediterraneo/intro/terracota.png', desc: 'Pisos cálidos que conectan con la tierra.' }
+            ],
+            exteriores: [
+                { img: 'assets/images/estilos/mediterraneo/exteriores/01-vista-panoramica.png', titulo: 'Vista panorámica', desc: 'Fachada encalada que refleja la luz mediterránea y contrasta con el cielo azul.' },
+                { img: 'assets/images/estilos/mediterraneo/exteriores/02-fachada-principal.png', titulo: 'Fachada principal', desc: 'Arcos de medio punto y celosías que permiten el paso de luz con privacidad.' },
+                { img: 'assets/images/estilos/mediterraneo/exteriores/03-acceso-principal.png', titulo: 'Acceso principal', desc: 'Puerta de madera maciza con detalles de herrería artesanal.' },
+                { img: 'assets/images/estilos/mediterraneo/exteriores/04-jardin-privado.png', titulo: 'Jardín privado', desc: 'Jardín con olivos, lavanda y fuentes que evocan la Costa Brava.' },
+                { img: 'assets/images/estilos/mediterraneo/exteriores/05-contrafachada.png', titulo: 'Contrafachada', desc: 'Patio interior con pérgola de madera y bugambilias.' }
+            ],
+            interiores: [
+                { img: 'assets/images/estilos/mediterraneo/interiores/01-recibidor.png', titulo: 'Recibidor principal', desc: 'Recibidor con piso de terracota y paredes encaladas que transmiten frescura.' },
+                { img: 'assets/images/estilos/mediterraneo/interiores/02-sala-estar.png', titulo: 'Sala de estar', desc: 'Sala con chimenea y vigas de madera vistas, ambiente acogedor.' },
+                { img: 'assets/images/estilos/mediterraneo/interiores/03-comedor.png', titulo: 'Comedor formal', desc: 'Comedor con mesa de madera y sillas tapizadas en lino natural.' },
+                { img: 'assets/images/estilos/mediterraneo/interiores/04-dormitorio-principal.png', titulo: 'Dormitorio principal', desc: 'Habitación con textiles de algodón y colores tierra que invitan al descanso.' },
+                { img: 'assets/images/estilos/mediterraneo/interiores/05-sanitario.png', titulo: 'Sanitario', desc: 'Baño con lavabo de piedra y azulejos hidráulicos artesanales.' },
+                { img: 'assets/images/estilos/mediterraneo/interiores/06-vestidor.png', titulo: 'Vestidor', desc: 'Vestidor con muebles de madera y cestos de mimbre.' },
+                { img: 'assets/images/estilos/mediterraneo/interiores/07-dormitorio.png', titulo: 'Dormitorio secundario', desc: 'Habitación con ventanas que dan al patio interior lleno de plantas.' }
+            ]
+        },
+        minimalista: {
+            nombre: 'Minimalista Cálido',
+            descripcion: 'Líneas puras, madera natural y luz envolvente que crea calma',
+            imagenPrincipal: 'assets/images/proyecto/4-estilos/minimalista.jpg',
+            materiales: [
+                { nombre: 'Barro Cocido', img: 'assets/images/estilos/minimalista/intro/barro-cocido.png', desc: 'Textura terrosa que aporta calidez al espacio.' },
+                { nombre: 'Lino', img: 'assets/images/estilos/minimalista/intro/lino.png', desc: 'Textiles naturales que suavizan las líneas puras.' },
+                { nombre: 'Madera', img: 'assets/images/estilos/minimalista/intro/madera.png', desc: 'Veteados naturales que conectan con la naturaleza.' },
+                { nombre: 'Piedra', img: 'assets/images/estilos/minimalista/intro/piedra.png', desc: 'Superficies orgánicas que aportan serenidad.' }
+            ],
+            exteriores: [
+                { img: 'assets/images/estilos/minimalista/exteriores/01-vista-panoramica.png', titulo: 'Vista panorámica', desc: 'Volúmenes puros y líneas rectas que se integran con el paisaje.' },
+                { img: 'assets/images/estilos/minimalista/exteriores/02-fachada-principal.png', titulo: 'Fachada principal', desc: 'Fachada de concreto aparente con grandes ventanales de piso a techo.' },
+                { img: 'assets/images/estilos/minimalista/exteriores/03-acceso-principal.png', titulo: 'Acceso principal', desc: 'Acceso sobrio con puerta de madera y camino de piedra.' },
+                { img: 'assets/images/estilos/minimalista/exteriores/04-jardin-privado.png', titulo: 'Jardín privado', desc: 'Jardín de bajo mantenimiento con especies nativas y grava.' },
+                { img: 'assets/images/estilos/minimalista/exteriores/05-contrafachada.png', titulo: 'Contrafachada', desc: 'Terraza trasera con asador y pérgola minimalista.' }
+            ],
+            interiores: [
+                { img: 'assets/images/estilos/minimalista/interiores/01-recibidor.png', titulo: 'Recibidor principal', desc: 'Espacio diáfano sin obstáculos que permite una transición fluida.' },
+                { img: 'assets/images/estilos/minimalista/interiores/02-sala-estar.png', titulo: 'Sala de estar', desc: 'Sala con muebles de líneas simples y colores neutros.' },
+                { img: 'assets/images/estilos/minimalista/interiores/03-comedor.png', titulo: 'Comedor formal', desc: 'Comedor con mesa de roble y sillas estilo dinamarqués.' },
+                { img: 'assets/images/estilos/minimalista/interiores/04-dormitorio-principal.png', titulo: 'Dormitorio principal', desc: 'Dormitorio con cama baja y ropa de cama en tonos arena.' },
+                { img: 'assets/images/estilos/minimalista/interiores/05-sanitario.png', titulo: 'Sanitario', desc: 'Baño con lavabo suspendido y grifería empotrada en muro.' },
+                { img: 'assets/images/estilos/minimalista/interiores/06-vestidor.png', titulo: 'Vestidor', desc: 'Vestidor abierto con sistema modular de almacenamiento.' },
+                { img: 'assets/images/estilos/minimalista/interiores/07-dormitorio.png', titulo: 'Dormitorio secundario', desc: 'Habitación versátil que puede funcionar como estudio o cuarto de huéspedes.' }
+            ]
+        },
+        internacional: {
+            nombre: 'Internacional',
+            descripcion: 'Visión global, funcionalidad y atmósfera serena con influencias mundiales',
+            imagenPrincipal: 'assets/images/proyecto/4-estilos/internacional.jpg',
+            materiales: [
+                { nombre: 'Acero', img: 'assets/images/estilos/internacional/intro/acero.png', desc: 'Estructura y detalles con estética industrial.' },
+                { nombre: 'Hormigón Visto', img: 'assets/images/estilos/internacional/intro/hormigon-visto.png', desc: 'Superficies brutas que definen el carácter.' },
+                { nombre: 'Madera', img: 'assets/images/estilos/internacional/intro/madera.png', desc: 'Contraste cálido que equilibra la dureza.' },
+                { nombre: 'Vidrio', img: 'assets/images/estilos/internacional/intro/vidrio.png', desc: 'Amplios ventanales que conectan interior y exterior.' }
+            ],
+            exteriores: [
+                { img: 'assets/images/estilos/internacional/exteriores/01-vista-panoramica.png', titulo: 'Vista panorámica', desc: 'Arquitectura vanguardista con juegos de voladizos y terrazas.' },
+                { img: 'assets/images/estilos/internacional/exteriores/02-fachada-principal.png', titulo: 'Fachada principal', desc: 'Fachada acristalada con protección solar mediante lamas.' },
+                { img: 'assets/images/estilos/internacional/exteriores/03-acceso-principal.png', titulo: 'Acceso principal', desc: 'Acceso moderno con puerta de acero corten y vegetación integrada.' },
+                { img: 'assets/images/estilos/internacional/exteriores/04-jardin-privado.png', titulo: 'Jardín privado', desc: 'Jardín vertical y espejos de agua que crean microclima.' },
+                { img: 'assets/images/estilos/internacional/exteriores/05-contrafachada.png', titulo: 'Contrafachada', desc: 'Terraza con piscina infinity que se funde con el horizonte.' }
+            ],
+            interiores: [
+                { img: 'assets/images/estilos/internacional/interiores/01-recibidor.png', titulo: 'Recibidor principal', desc: 'Doble altura con iluminación cenital y acabados en concreto pulido.' },
+                { img: 'assets/images/estilos/internacional/interiores/02-sala-estar.png', titulo: 'Sala de estar', desc: 'Sala con mobiliario de diseñadores internacionales y obra de arte.' },
+                { img: 'assets/images/estilos/internacional/interiores/03-comedor.png', titulo: 'Comedor formal', desc: 'Comedor con mesa de mármol y sillas tapizadas en piel.' },
+                { img: 'assets/images/estilos/internacional/interiores/04-dormitorio-principal.png', titulo: 'Dormitorio principal', desc: 'Suite con ventanales de piso a techo y domótica integrada.' },
+                { img: 'assets/images/estilos/internacional/interiores/05-sanitario.png', titulo: 'Sanitario', desc: 'Baño con doble lavabo flotante y ducha tipo lluvia.' },
+                { img: 'assets/images/estilos/internacional/interiores/06-vestidor.png', titulo: 'Vestidor', desc: 'Walk-in closet con isla central e iluminación LED.' },
+                { img: 'assets/images/estilos/internacional/interiores/07-dormitorio.png', titulo: 'Dormitorio secundario', desc: 'Habitación con diseño multifuncional y tecnología integrada.' }
+            ]
+        }
+    };
+
+    // ============================================
+    // FUNCIONES
+    // ============================================
+    
+    function openModal(etapaId) {
+        const etapa = etapasConfig[etapaId];
+        if (!etapa) return;
+        
+        const modal = document.getElementById('etapaModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalSubtitle = document.getElementById('modalSubtitle');
+        const modalBody = document.getElementById('modalBody');
+        
+        modalTitle.textContent = `${etapa.nombre}: ${etapa.titulo}`;
+        modalSubtitle.textContent = etapa.subtitulo;
+        
+        const caracteristicasHtml = etapa.caracteristicas.map(c => `<li>${c}</li>`).join('');
+        
+        modalBody.innerHTML = `
+            <div style="cursor: pointer;" onclick="openLightbox('${etapa.imagenModal}', '${etapa.titulo} - Vista principal'); event.stopPropagation();">
+                <img src="${etapa.imagenModal}" alt="${etapa.titulo}" onerror="this.src='https://via.placeholder.com/800x400?text=${etapa.titulo}'">
+            </div>
+            <h3>${etapa.titulo}</h3>
+            <p>${etapa.descripcionLarga}</p>
+            <h3 style="margin-top: 25px;">✓ Características incluidas</h3>
+            <ul class="features-list">
+                ${caracteristicasHtml}
+            </ul>
+            <div style="background: rgba(198, 164, 63, 0.08); padding: 20px; border-radius: 16px; margin-top: 25px;">
+                <p style="margin-bottom: 0; color: #8B7355; font-weight: 600; text-align: center;">
+                    🏗️ Esta etapa puede personalizarse según tus necesidades y el estilo arquitectónico seleccionado.
+                </p>
+            </div>
+        `;
+        
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal() {
+        const modal = document.getElementById('etapaModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    function openTecnicaModal(estiloId) {
+        const tecnica = tecnicaConfig[estiloId];
+        if (!tecnica) return;
+        
+        const modal = document.getElementById('tecnicaModal');
+        const modalTitle = document.getElementById('tecnicaModalTitle');
+        const modalBody = document.getElementById('tecnicaModalBody');
+        
+        modalTitle.textContent = `${tecnica.nombre} - Documentación Técnica`;
+        
+        modalBody.innerHTML = `
+            <div class="tecnica-item">
+                <h3>📐 Planta Amueblada</h3>
+                <img src="${tecnica.planta}" alt="Planta ${tecnica.nombre}" onclick="openLightbox('${tecnica.planta}', 'Planta Amueblada - ${tecnica.nombre}'); event.stopPropagation();" onerror="this.src='https://via.placeholder.com/500x400?text=Planta'">
+            </div>
+            <div class="tecnica-item">
+                <h3>🏗️ Isométrica</h3>
+                <img src="${tecnica.isometrico}" alt="Isométrica ${tecnica.nombre}" onclick="openLightbox('${tecnica.isometrico}', 'Isométrica - ${tecnica.nombre}'); event.stopPropagation();" onerror="this.src='https://via.placeholder.com/500x400?text=Isometrica'">
+            </div>
+        `;
+        
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeTecnicaModal() {
+        const modal = document.getElementById('tecnicaModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    function openLightbox(imageSrc, caption) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const container = document.getElementById('lightboxContainer');
+        
+        lightboxImg.src = imageSrc;
+        lightboxCaption.textContent = caption;
+        
+        const tempImg = new Image();
+        tempImg.onload = function() {
+            const isVertical = tempImg.height > tempImg.width;
+            if (isVertical) {
+                container.classList.remove('horizontal');
+                container.classList.add('vertical');
+            } else {
+                container.classList.remove('vertical');
+                container.classList.add('horizontal');
+            }
+        };
+        tempImg.src = imageSrc;
+        
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+            closeTecnicaModal();
+            closeLightbox();
+        }
+    });
+    
+    // Estado de navegación
+    let currentView = 'home';
+    let currentEstilo = null;
+    let currentGalleryType = null;
+    
+    function navigateTo(view, estilo = null, galleryType = null) {
+        currentView = view;
+        currentEstilo = estilo;
+        currentGalleryType = galleryType;
+        render();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    function render() {
+        const app = document.getElementById('app');
+        
+        if (currentView === 'home') {
+            app.innerHTML = renderHome();
+        } else if (currentView === 'estilos') {
+            app.innerHTML = renderEstilosSection();
+        } else if (currentView === 'etapas') {
+            app.innerHTML = renderEtapasSection();
+        } else if (currentView === 'tecnica') {
+            app.innerHTML = renderTecnicaSection();
+        } else if (currentView === 'contacto') {
+            app.innerHTML = renderContactoSection();
+        } else if (currentView === 'estiloDetail' && currentEstilo) {
+            app.innerHTML = renderEstiloDetail(currentEstilo);
+        } else if (currentView === 'gallery' && currentEstilo && currentGalleryType) {
+            app.innerHTML = renderGallery(currentEstilo, currentGalleryType);
+        }
+    }
+    
+    function renderHome() {
+        return `
+            <section id="inicio" class="hero-section">
+                <div class="container">
+                    <div class="hero-content">
+                        <h2>Un Proyecto, 4 Estilos, 5 Etapas</h2>
+                        <p>Construimos el hogar que refleja tu personalidad: elegancia neoclásica, frescura mediterránea, pureza minimalista o visión internacional.</p>
+                        <button class="btn" onclick="navigateTo('estilos')">Explorar Estilos</button>
+                    </div>
+                </div>
+            </section>
+            <section id="estilos" class="section-padding">
+                <div class="container">
+                    <h2 class="section-title">Elige la identidad de tu hogar</h2>
+                    <p class="section-subtitle">4 estilos arquitectónicos únicos, todos bajo la calidad y el sello AUREA.</p>
+                    <div class="style-grid">
+                        ${renderStyleCards()}
+                    </div>
+                </div>
+            </section>
+            <section id="etapas" class="section-padding bg-light">
+                <div class="container">
+                    <h2 class="section-title">El proceso: 5 etapas hacia tu hogar</h2>
+                    <p class="section-subtitle">Cada fase está pensada para maximizar la experiencia y la calidad de tu inversión.</p>
+                    <div class="stages-grid">
+                        ${renderStagesGrid()}
+                    </div>
+                </div>
+            </section>
+            <section id="tecnica" class="section-padding">
+                <div class="container">
+                    <h2 class="section-title">Documentación Técnica</h2>
+                    <p class="section-subtitle">Planos e isométricos de cada estilo arquitectónico. Haz clic para ver Planta + Isométrica.</p>
+                    <div class="tecnica-grid">
+                        ${renderTecnicaCards()}
+                    </div>
+                </div>
+            </section>
+            <section id="contacto" class="section-padding bg-dark">
+                <div class="container">
+                    <h2 class="section-title" style="color:#e8dcc8">Contáctanos</h2>
+                    <p class="section-subtitle" style="color:#b8aa98">Conoce nuestras oficinas y equipo</p>
+                    <div class="contacto-equipo">
+                        <div class="contacto-card">
+                            <img src="assets/images/contacto/oficina.jpg" alt="Oficina" onerror="this.src='https://via.placeholder.com/280x200?text=Oficina'">
+                            <p>📍 Nuestras Oficinas</p>
+                        </div>
+                        <div class="contacto-card">
+                            <img src="assets/images/contacto/equipo.jpg" alt="Equipo" onerror="this.src='https://via.placeholder.com/280x200?text=Equipo'">
+                            <p>👥 El Equipo AUREA</p>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <select>
+                                <option value="">Selecciona un estilo de interés</option>
+                                <option>Neoclásico Contemporáneo</option>
+                                <option>Mediterráneo Contemporáneo</option>
+                                <option>Minimalista Cálido</option>
+                                <option>Internacional</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="4" placeholder="¿En qué etapa del proyecto estás?"></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width:100%;">Enviar mensaje</button>
+                    </form>
+                    <div style="text-align: center; color: #b8aa98;">
+                        <p>📞 +52 55 1234 5678 | ✉️ hola@aureadesarrollos.com</p>
+                    </div>
+                </div>
+            </section>
+        `;
+    }
+    
+    function renderStagesGrid() {
+        return [1, 2, 3, 4, 5].map(num => {
+            const etapa = etapasConfig[num];
+            return `
+                <div class="stage-card" onclick="openModal(${num})">
+                    <img src="${etapa.imagen}" alt="${etapa.nombre}" onerror="this.src='https://via.placeholder.com/300x160?text=${etapa.nombre}'">
+                    <span class="stage-number">${etapa.nombre}</span>
+                    <h4>${etapa.titulo}</h4>
+                    <p>${etapa.subtitulo}</p>
+                </div>
+            `;
+        }).join('');
+    }
+    
+    function renderTecnicaCards() {
+        const estilos = ['neoclasico', 'mediterraneo', 'minimalista', 'internacional'];
+        return estilos.map(estilo => `
+            <div class="tecnica-card" onclick="openTecnicaModal('${estilo}')">
+                <img src="${tecnicaConfig[estilo].planta}" alt="${tecnicaConfig[estilo].nombre}" onerror="this.src='https://via.placeholder.com/400x220?text=${tecnicaConfig[estilo].nombre}'">
+                <p>${tecnicaConfig[estilo].nombre}</p>
+            </div>
+        `).join('');
+    }
+    
+    function renderStyleCards() {
+        const estilos = ['neoclasico', 'mediterraneo', 'minimalista', 'internacional'];
+        return estilos.map(estilo => `
+            <div class="style-card" onclick="navigateTo('estiloDetail', '${estilo}')">
+                <img class="card-image" src="${estilosConfig[estilo].imagenPrincipal}" alt="${estilosConfig[estilo].nombre}" onerror="this.src='https://via.placeholder.com/400x280?text=${estilosConfig[estilo].nombre}'">
+                <div class="card-content">
+                    <h3>${estilosConfig[estilo].nombre}</h3>
+                    <p>${estilosConfig[estilo].descripcion}</p>
+                </div>
+            </div>
+        `).join('');
+    }
+    
+    function renderEstilosSection() {
+        return `
+            <section class="section-padding">
+                <div class="container">
+                    <h2 class="section-title">Elige la identidad de tu hogar</h2>
+                    <p class="section-subtitle">4 estilos arquitectónicos únicos, todos bajo la calidad y el sello AUREA.</p>
+                    <div class="style-grid">
+                        ${renderStyleCards()}
+                    </div>
+                    <div class="back-link">
+                        <button class="btn-volver" onclick="navigateTo('home')">← Volver al Inicio</button>
+                    </div>
+                </div>
+            </section>
+        `;
+    }
+    
+    function renderEtapasSection() {
+        return `
+            <section class="section-padding bg-light">
+                <div class="container">
+                    <h2 class="section-title">El proceso: 5 etapas hacia tu hogar</h2>
+                    <p class="section-subtitle">Cada fase está pensada para maximizar la experiencia y la calidad de tu inversión. Haz clic en cada etapa para conocer los detalles.</p>
+                    <div class="stages-grid">
+                        ${renderStagesGrid()}
+                    </div>
+                    <div class="back-link">
+                        <button class="btn-volver" onclick="navigateTo('home')">← Volver al Inicio</button>
+                    </div>
+                </div>
+            </section>
+        `;
+    }
+    
+    function renderTecnicaSection() {
+        return `
+            <section class="section-padding">
+                <div class="container">
+                    <h2 class="section-title">Documentación Técnica</h2>
+                    <p class="section-subtitle">Planos e isométricos de cada estilo arquitectónico. Haz clic en cada tarjeta para ver Planta + Isométrica.</p>
+                    <div class="tecnica-grid">
+                        ${renderTecnicaCards()}
+                    </div>
+                    <div class="back-link">
+                        <button class="btn-volver" onclick="navigateTo('home')">← Volver al Inicio</button>
+                    </div>
+                </div>
+            </section>
+        `;
+    }
+    
+    function renderContactoSection() {
+        return `
+            <section class="section-padding bg-dark">
+                <div class="container">
+                    <h2 class="section-title" style="color:#e8dcc8">Contáctanos</h2>
+                    <p class="section-subtitle" style="color:#b8aa98">Conoce nuestras oficinas y equipo</p>
+                    <div class="contacto-equipo">
+                        <div class="contacto-card">
+                            <img src="assets/images/contacto/oficina.jpg" alt="Oficina" onerror="this.src='https://via.placeholder.com/280x200?text=Oficina'">
+                            <p>📍 Nuestras Oficinas</p>
+                        </div>
+                        <div class="contacto-card">
+                            <img src="assets/images/contacto/equipo.jpg" alt="Equipo" onerror="this.src='https://via.placeholder.com/280x200?text=Equipo'">
+                            <p>👥 El Equipo AUREA</p>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm2">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="form-group">
+                            <select>
+                                <option value="">Selecciona un estilo de interés</option>
+                                <option>Neoclásico Contemporáneo</option>
+                                <option>Mediterráneo Contemporáneo</option>
+                                <option>Minimalista Cálido</option>
+                                <option>Internacional</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="4" placeholder="¿En qué etapa del proyecto estás?"></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width:100%;">Enviar mensaje</button>
+                    </form>
+                    <div style="text-align: center; color: #b8aa98;">
+                        <p>📞 +52 55 1234 5678 | ✉️ hola@aureadesarrollos.com</p>
+                    </div>
+                    <div class="back-link">
+                        <button class="btn-volver" onclick="navigateTo('home')">← Volver al Inicio</button>
+                    </div>
+                </div>
+            </section>
+        `;
+    }
+    
+    function renderEstiloDetail(estiloId) {
+        const estilo = estilosConfig[estiloId];
+        if (!estilo) return '<p>Estilo no encontrado</p>';
+        return `
+            <section class="page-header">
+                <div class="container">
+                    <h1>${estilo.nombre}</h1>
+                    <p>${estilo.descripcion}</p>
+                </div>
+            </section>
+            <section class="section-padding">
+                <div class="container">
+                    <h2 class="section-title">Materiales y Acabados</h2>
+                    <p class="section-subtitle">La esencia del estilo en cada detalle</p>
+                    <div class="materiales-grid">
+                        ${estilo.materiales.map(m => `
+                            <div class="material-card">
+                                <img src="${m.img}" alt="${m.nombre}" onerror="this.src='https://via.placeholder.com/300x200?text=${m.nombre}'">
+                                <h4>${m.nombre}</h4>
+                                <p>${m.desc}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="botones-container">
+                        <button class="btn-grande" onclick="navigateTo('gallery', '${estiloId}', 'exteriores')">🏛️ Espacios Exteriores</button>
+                        <button class="btn-grande btn-outline" onclick="navigateTo('gallery', '${estiloId}', 'interiores')">🛋️ Espacios Interiores</button>
+                    </div>
+                    <div class="back-link">
+                        <button class="btn-volver" onclick="navigateTo('estilos')">← Volver a los Estilos</button>
+                    </div>
+                </div>
+            </section>
+        `;
+    }
+    
+    function renderGallery(estiloId, type) {
+        const estilo = estilosConfig[estiloId];
+        if (!estilo) return '<p>Estilo no encontrado</p>';
+        
+        const images = type === 'exteriores' ? estilo.exteriores : estilo.interiores;
+        const title = type === 'exteriores' ? 'Espacios Exteriores' : 'Espacios Interiores';
+        const icon = type === 'exteriores' ? '🏛️' : '🛋️';
+        
+        return `
+            <section class="page-header">
+                <div class="container">
+                    <h1>${estilo.nombre}</h1>
+                    <p>${icon} ${title} · Haz clic en cualquier imagen para verla en tamaño real</p>
+                </div>
+            </section>
+            <section class="section-padding">
+                <div class="container">
+                    <div class="gallery-grid">
+                        ${images.map(img => `
+                            <div class="gallery-item" onclick="openLightbox('${img.img}', '${(img.desc || img.titulo).replace(/'/g, "\\'")}')">
+                                <img src="${img.img}" alt="${img.titulo}" onerror="this.src='https://via.placeholder.com/400x280?text=${img.titulo}'">
+                                <p>${img.titulo}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="back-link">
+                        <button class="btn-volver" onclick="navigateTo('estiloDetail', '${estiloId}')">← Volver a ${estilo.nombre}</button>
+                    </div>
+                </div>
+            </section>
+        `;
+    }
+    
+    document.addEventListener('submit', function(e) {
+        if (e.target.id === 'contactForm' || e.target.id === 'contactForm2') {
+            e.preventDefault();
+            alert('Gracias por contactar a AUREA Desarrollos Inmobiliarios. Un asesor responderá en breve.');
+            e.target.reset();
+        }
+    });
+    
+    render();
+</script>
+</body>
+</html>
