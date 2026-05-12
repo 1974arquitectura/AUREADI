@@ -23,17 +23,26 @@
             animation: metallicShine 6s linear infinite;
         }
 
-        /* SPLASH */
+        /* SPLASH - SLICE 00 */
         .splash {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-image: url('assets/images/hero/hero-bg.png');
-            background-size: cover; background-position: center;
-            z-index: 1000; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; cursor: pointer;
-            transition: opacity 2s ease;
+            background-size: cover;
+            background-position: center;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: opacity 0.8s ease;
         }
         .splash::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
-        .splash-content { position: relative; z-index: 2; text-align: center; animation: fadeInUp 1s ease; }
+        .splash-content { position: relative; z-index: 2; text-align: center; animation: fadeInUp 0.8s ease; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .splash-logo { width: 140px; margin: 0 auto 30px; }
         .splash-logo img { width: 100%; }
@@ -41,7 +50,11 @@
         .splash-subtitle { font-size: 16px; font-weight: 400; letter-spacing: 10px; text-transform: uppercase; text-shadow: 0 2px 15px rgba(0,0,0,0.5); }
         .splash-hint { position: absolute; bottom: 40px; font-size: 13px; font-weight: 300; letter-spacing: 3px; color: rgba(255,255,255,0.7); background: rgba(0,0,0,0.3); padding: 10px 24px; border-radius: 30px; backdrop-filter: blur(5px); animation: pulse 1.5s infinite; }
         @keyframes pulse { 0%,100% { opacity: 0.5; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
-        .splash.oculto { opacity: 0; visibility: hidden; }
+        .splash.hide { opacity: 0; visibility: hidden; pointer-events: none; }
+
+        /* MAIN CONTENT - SLICE 01 */
+        .main-content { display: block; }
+        .main-content.hide { display: none; }
 
         /* HEADER */
         .header { background: rgba(250,247,240,0.95); backdrop-filter: blur(10px); padding: 16px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(198,164,63,0.2); }
@@ -104,12 +117,13 @@
         .gallery-item img { width: 100%; height: 260px; object-fit: cover; }
         .gallery-item p { padding: 18px; text-align: center; font-weight: 500; color: #8B7355; }
 
-        /* TÉCNICA - SPLIT VIEW */
-        .tecnica-split { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 20px 0; }
-        .tecnica-split-item { text-align: center; }
-        .tecnica-split-item h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: #8B7355; margin-bottom: 15px; }
-        .tecnica-split-item img { width: 100%; border-radius: 16px; cursor: pointer; transition: transform 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
-        .tecnica-split-item img:hover { transform: scale(1.02); }
+        /* TÉCNICA MODAL */
+        .tecnica-modal .modal-content { max-width: 1200px; }
+        .tecnica-modal-body { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 30px; }
+        .tecnica-modal-item { text-align: center; }
+        .tecnica-modal-item h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: #8B7355; margin-bottom: 15px; }
+        .tecnica-modal-item img { width: 100%; border-radius: 16px; cursor: pointer; transition: transform 0.3s; }
+        .tecnica-modal-item img:hover { transform: scale(1.02); }
 
         /* BOTONES */
         .botones-container { display: flex; justify-content: center; gap: 30px; margin: 40px 0; flex-wrap: wrap; }
@@ -131,7 +145,7 @@
         .footer { background: #1f1c16; text-align: center; padding: 45px 20px; font-size: 12px; color: #b8aa98; }
 
         /* MODALES */
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; justify-content: center; align-items: center; overflow-y: auto; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 3000; justify-content: center; align-items: center; overflow-y: auto; }
         .modal.active { display: flex; }
         .modal-content { background: white; max-width: 900px; width: 90%; border-radius: 24px; max-height: 85vh; overflow-y: auto; }
         .modal-header { background: #2c2820; color: white; padding: 25px; position: relative; }
@@ -141,16 +155,8 @@
         .features-list { list-style: none; margin-top: 20px; }
         .features-list li { padding: 8px 0; border-bottom: 1px solid #eee; }
 
-        /* MODAL TÉCNICA */
-        .tecnica-modal .modal-content { max-width: 1200px; }
-        .tecnica-modal-body { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 30px; }
-        .tecnica-modal-item { text-align: center; }
-        .tecnica-modal-item h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: #8B7355; margin-bottom: 15px; }
-        .tecnica-modal-item img { width: 100%; border-radius: 16px; cursor: pointer; transition: transform 0.3s; }
-        .tecnica-modal-item img:hover { transform: scale(1.02); }
-
         /* LIGHTBOX */
-        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 3000; justify-content: center; align-items: center; cursor: pointer; }
+        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 4000; justify-content: center; align-items: center; cursor: pointer; }
         .lightbox.active { display: flex; }
         .lightbox img { max-width: 90%; max-height: 80vh; }
         .lightbox-caption { color: white; margin-top: 20px; text-align: center; }
@@ -164,7 +170,7 @@
 <!-- SLICE 00 - SPLASH -->
 <div id="splash" class="splash">
     <div class="splash-content">
-        <div class="splash-logo"><img src="logo-aurea.png" alt="AUREA"></div>
+        <div class="splash-logo"><img src="logo-aurea.png" alt="AUREA" onerror="this.src='https://placehold.co/140x140'"></div>
         <div class="splash-title gold-text">AUREA</div>
         <div class="splash-subtitle gold-text">DESARROLLOS INMOBILIARIOS</div>
     </div>
@@ -175,7 +181,7 @@
 <div id="mainContent" class="main-content">
     <div class="header">
         <div class="logo-area" id="logoReset">
-            <img src="logo-aurea.png" alt="AUREA">
+            <img src="logo-aurea.png" alt="AUREA" onerror="this.src='https://placehold.co/45x45'">
             <div><div class="logo-text">AUREA <span>-</span> Desarrollos Inmobiliarios</div><div class="logo-sub">arquitectura consciente</div></div>
         </div>
         <div class="nav">
@@ -202,7 +208,7 @@
         </div>
     </div>
 
-    <!-- ESTILOS (grid principal) -->
+    <!-- ESTILOS -->
     <div id="section-estilos" class="section">
         <div class="container">
             <h2 class="section-title gold-text">Elige la identidad de tu hogar</h2>
@@ -225,7 +231,7 @@
         </div>
     </div>
 
-    <!-- GALERÍA DE EXTERIORES -->
+    <!-- GALERÍAS -->
     <div id="section-exteriores" class="section">
         <div class="container">
             <h2 class="section-title" id="galeria-titulo"></h2>
@@ -234,7 +240,6 @@
         </div>
     </div>
 
-    <!-- GALERÍA DE INTERIORES -->
     <div id="section-interiores" class="section">
         <div class="container">
             <h2 class="section-title" id="galeria-interiores-titulo"></h2>
@@ -286,7 +291,7 @@
     <div class="footer"><p>2025 AUREA Desarrollos Inmobiliarios — Un proyecto, 4 estilos, 5 etapas</p><p style="margin-top:10px;">arquitectura consciente · estilo japandi</p></div>
 </div>
 
-<!-- MODAL PARA ETAPAS -->
+<!-- MODALES -->
 <div id="etapaModal" class="modal" onclick="closeEtapaModal()">
     <div class="modal-content" onclick="event.stopPropagation()">
         <div class="modal-header"><span class="modal-close" onclick="closeEtapaModal()">&times;</span><h2 id="modalTitle"></h2><p id="modalSubtitle"></p></div>
@@ -294,7 +299,6 @@
     </div>
 </div>
 
-<!-- MODAL PARA TÉCNICA (Planta + Isométrica juntas) -->
 <div id="tecnicaModal" class="modal tecnica-modal" onclick="closeTecnicaModal()">
     <div class="modal-content" onclick="event.stopPropagation()">
         <div class="modal-header"><span class="modal-close" onclick="closeTecnicaModal()">&times;</span><h2 id="tecnicaModalTitle"></h2><p id="tecnicaModalSubtitle">Documentación completa del proyecto</p></div>
@@ -302,19 +306,15 @@
     </div>
 </div>
 
-<!-- LIGHTBOX -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <div><img id="lightbox-img" src=""><div class="lightbox-caption" id="lightbox-caption"></div></div>
 </div>
 
 <script>
-    // ==================== DATOS COMPLETOS ====================
-    
-    // ESTILOS ARQUITECTÓNICOS
+    // ==================== DATOS ====================
     const estilosData = {
         neoclasico: {
-            id: 'neoclasico',
-            nombre: 'Neoclásico Contemporáneo',
+            id: 'neoclasico', nombre: 'Neoclásico Contemporáneo',
             desc: 'Elegancia atemporal que combina la tradición clásica con el confort moderno',
             img: 'assets/images/proyecto/4-estilos/neoclasico.jpg',
             materiales: [
@@ -341,8 +341,7 @@
             ]
         },
         mediterraneo: {
-            id: 'mediterraneo',
-            nombre: 'Mediterráneo Contemporáneo',
+            id: 'mediterraneo', nombre: 'Mediterráneo Contemporáneo',
             desc: 'Frescura costera, texturas naturales y patios interiores llenos de luz',
             img: 'assets/images/proyecto/4-estilos/mediterraneo.jpg',
             materiales: [
@@ -369,8 +368,7 @@
             ]
         },
         minimalista: {
-            id: 'minimalista',
-            nombre: 'Minimalista Cálido',
+            id: 'minimalista', nombre: 'Minimalista Cálido',
             desc: 'Líneas puras, madera natural y luz envolvente que crea calma',
             img: 'assets/images/proyecto/4-estilos/minimalista.jpg',
             materiales: [
@@ -397,8 +395,7 @@
             ]
         },
         internacional: {
-            id: 'internacional',
-            nombre: 'Internacional',
+            id: 'internacional', nombre: 'Internacional',
             desc: 'Visión global, funcionalidad y atmósfera serena con influencias mundiales',
             img: 'assets/images/proyecto/4-estilos/internacional.jpg',
             materiales: [
@@ -426,46 +423,14 @@
         }
     };
 
-    // ETAPAS
     const etapasData = {
-        1: { 
-            nombre: "Etapa 1", titulo: "Espacios Sociales y Relax", subtitulo: "El corazón del hogar", 
-            img: "assets/images/programa/etapa-1-cocina-comedor-piscina.png",
-            imgModal: "assets/images/programa/etapas/Etapa 1.png",
-            descLarga: "Esta primera etapa define los espacios de convivencia y entretenimiento.",
-            features: ["Cocina integral con isla central", "Comedor para 10-12 comensales", "Lavadero eficiente", "Sanitario social", "Piscina con galería cubierta", "Pérgola en jardín privado"] 
-        },
-        2: { 
-            nombre: "Etapa 2", titulo: "Dormitorios Secundarios", subtitulo: "Privacidad y confort", 
-            img: "assets/images/programa/etapa-2-dormitorios-suite.png",
-            imgModal: "assets/images/programa/etapas/Etapa 2.png",
-            descLarga: "Dormitorios con baño en suite para mayor comodidad.",
-            features: ["Dos dormitorios con baño privado", "Closets empotrados", "Ventanas de doble acristalamiento", "Iluminación LED regulable", "Salida a terraza privada"] 
-        },
-        3: { 
-            nombre: "Etapa 3", titulo: "Área de Recibo", subtitulo: "La primera impresión", 
-            img: "assets/images/programa/etapa-3-sala-estar-ingreso.png",
-            imgModal: "assets/images/programa/etapas/Etapa 3.png",
-            descLarga: "El área de recibo es la carta de presentación de tu hogar.",
-            features: ["Sala de estar con doble altura", "Recibidor con piso de mármol", "Toilette para invitados", "Iluminación cenital", "Conexión fluida con áreas sociales"] 
-        },
-        4: { 
-            nombre: "Etapa 4", titulo: "Master Suite", subtitulo: "Tu santuario personal", 
-            img: "assets/images/programa/etapa-4-principal-vestidor.png",
-            imgModal: "assets/images/programa/etapas/Etapa 4.png",
-            descLarga: "La Master Suite es el espacio más íntimo y personal.",
-            features: ["Dormitorio principal amplio", "Vestidor con isla central", "Baño con hidromasaje", "Terraza privada", "Sistema de domótica"] 
-        },
-        5: { 
-            nombre: "Etapa 5", titulo: "Flexibilidad", subtitulo: "Cochera convertible", 
-            img: "assets/images/programa/etapa-5-cochera-doble.png",
-            imgModal: "assets/images/programa/etapas/Etapa 5.png",
-            descLarga: "La cochera para dos autos se transforma en quincho.",
-            features: ["Cochera para dos vehículos", "Puertas plegables", "Piso continuo con jardín", "Preinstalación para asador", "Iluminación escénica"] 
-        }
+        1: { nombre: "Etapa 1", titulo: "Espacios Sociales y Relax", subtitulo: "El corazón del hogar", img: "assets/images/programa/etapa-1-cocina-comedor-piscina.png", imgModal: "assets/images/programa/etapas/Etapa 1.png", descLarga: "Esta primera etapa define los espacios de convivencia y entretenimiento.", features: ["Cocina integral con isla central", "Comedor para 10-12 comensales", "Lavadero eficiente", "Sanitario social", "Piscina con galería cubierta", "Pérgola en jardín privado"] },
+        2: { nombre: "Etapa 2", titulo: "Dormitorios Secundarios", subtitulo: "Privacidad y confort", img: "assets/images/programa/etapa-2-dormitorios-suite.png", imgModal: "assets/images/programa/etapas/Etapa 2.png", descLarga: "Dormitorios con baño en suite para mayor comodidad.", features: ["Dos dormitorios con baño privado", "Closets empotrados", "Ventanas de doble acristalamiento", "Iluminación LED regulable", "Salida a terraza privada"] },
+        3: { nombre: "Etapa 3", titulo: "Área de Recibo", subtitulo: "La primera impresión", img: "assets/images/programa/etapa-3-sala-estar-ingreso.png", imgModal: "assets/images/programa/etapas/Etapa 3.png", descLarga: "El área de recibo es la carta de presentación de tu hogar.", features: ["Sala de estar con doble altura", "Recibidor con piso de mármol", "Toilette para invitados", "Iluminación cenital", "Conexión fluida con áreas sociales"] },
+        4: { nombre: "Etapa 4", titulo: "Master Suite", subtitulo: "Tu santuario personal", img: "assets/images/programa/etapa-4-principal-vestidor.png", imgModal: "assets/images/programa/etapas/Etapa 4.png", descLarga: "La Master Suite es el espacio más íntimo y personal.", features: ["Dormitorio principal amplio", "Vestidor con isla central", "Baño con hidromasaje", "Terraza privada", "Sistema de domótica"] },
+        5: { nombre: "Etapa 5", titulo: "Flexibilidad", subtitulo: "Cochera convertible", img: "assets/images/programa/etapa-5-cochera-doble.png", imgModal: "assets/images/programa/etapas/Etapa 5.png", descLarga: "La cochera para dos autos se transforma en quincho.", features: ["Cochera para dos vehículos", "Puertas plegables", "Piso continuo con jardín", "Preinstalación para asador", "Iluminación escénica"] }
     };
 
-    // TÉCNICA - Cada estilo con su PLANTA e ISOMÉTRICA
     const tecnicaData = {
         neoclasico: { nombre: "Neoclásico", planta: "assets/images/tecnica/planta-neoclasico.png", isometrico: "assets/images/tecnica/isometrico-neoclasico.png" },
         mediterraneo: { nombre: "Mediterráneo", planta: "assets/images/tecnica/planta-mediterraneo.png", isometrico: "assets/images/tecnica/isometrico-mediterraneo.png" },
@@ -473,11 +438,11 @@
         internacional: { nombre: "Internacional", planta: "assets/images/tecnica/planta-internacional.png", isometrico: "assets/images/tecnica/isometrico-internacional.png" }
     };
 
-    // ==================== VARIABLES GLOBALES ====================
+    // ==================== VARIABLES ====================
     let currentEstiloId = null;
     let currentSection = 'home';
 
-    // ==================== FUNCIONES GENERALES ====================
+    // ==================== FUNCIONES ====================
     function showSection(sectionId, estiloId = null) {
         document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
         const activeSection = document.getElementById(`section-${sectionId}`);
@@ -504,7 +469,7 @@
         document.body.style.overflow = '';
     }
 
-    // ==================== MODAL ETAPAS ====================
+    // ETAPAS MODAL
     function openEtapaModal(etapaId) {
         const etapa = etapasData[etapaId];
         if (!etapa) return;
@@ -532,7 +497,7 @@
         document.body.style.overflow = '';
     }
 
-    // ==================== MODAL TÉCNICA (Planta + Isométrica) ====================
+    // TÉCNICA MODAL
     function openTecnicaModal(estiloId) {
         const tecnica = tecnicaData[estiloId];
         if (!tecnica) return;
@@ -558,7 +523,7 @@
         document.body.style.overflow = '';
     }
 
-    // ==================== ESTILOS ====================
+    // ESTILOS
     function showEstiloDetalle(estiloId) {
         const estilo = estilosData[estiloId];
         if (!estilo) return;
@@ -598,7 +563,7 @@
         showSection(tipo === 'exteriores' ? 'exteriores' : 'interiores');
     }
 
-    // ==================== RENDERIZAR GRIDS ====================
+    // RENDER
     function renderEstilos() {
         const container = document.getElementById('estilos-grid');
         if (!container) return;
@@ -642,24 +607,18 @@
 
         const splash = document.getElementById('splash');
         const mainContent = document.getElementById('mainContent');
-        let splashClicked = false;
-        
+
         function resetToSplash() {
-            splash.style.display = 'flex';
-            splash.classList.remove('oculto');
-            mainContent.classList.remove('visible');
-            splashClicked = false;
+            splash.classList.remove('hide');
+            mainContent.classList.add('hide');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-        
+
         function showMainContent() {
-            if (splashClicked) return;
-            splashClicked = true;
-            splash.classList.add('oculto');
-            mainContent.classList.add('visible');
-            setTimeout(() => { splash.style.display = 'none'; }, 2000);
+            splash.classList.add('hide');
+            mainContent.classList.remove('hide');
         }
-        
+
         splash.addEventListener('click', showMainContent);
         document.getElementById('logoReset')?.addEventListener('click', resetToSplash);
 
